@@ -54,6 +54,17 @@
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-list li:hover {
+            background-color: #e1e1e1;
+        }
+        .menu-list li img {
+            display: none;
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
         }
         .contact-section form input, .contact-section form textarea {
             width: 100%;
@@ -94,9 +105,19 @@
     <div class="container">
         <h2>Menú de Pastas</h2>
         <ul class="menu-list">
-            <li><strong>Spaghetti Bolognese</strong> - $10,000 COP<br>Delicioso spaghetti con salsa de carne y tomate.</li>
-            <li><strong>Fettuccine Alfredo</strong> - $12,000 COP<br>Fettuccine con una cremosa salsa de queso y crema.</li>
-            <li><strong>Penne Arrabbiata</strong> - $9,500 COP<br>Penne en una salsa picante de tomate y ajo.</li>
+            <li onclick="toggleImage('spaghettiImg')">
+                <strong>Spaghetti Bolognese</strong> - $10,000 COP<br>Delicioso spaghetti con salsa de carne y tomate.
+                <img id="spaghettiImg" src="spaghetti.jpg" alt="Spaghetti Bolognese" style="width: 600px;">
+            </li>
+            <li onclick="toggleImage('fettuccineImg')">
+                <strong>Fettuccine Alfredo</strong> - $12,000 COP<br>Fettuccine con una cremosa salsa de queso y crema.
+                <img id="fettuccineImg" src="fettuccine.jpg" alt="Fettuccine Alfredo" style="width: 600px;">
+
+            </li>
+            <li onclick="toggleImage('penneImg')">
+                <strong>Penne Arrabbiata</strong> - $9,500 COP<br>Penne en una salsa picante de tomate y ajo.
+                <img id="penneImg" src="penne.jpg" alt="Penne Arrabbiata" style="width: 600px;">
+            </li>
         </ul>
     </div>
 </section>
@@ -129,6 +150,17 @@
         <p>&copy; 2024 Pasta para Estudiantes - Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script>
+    function toggleImage(imageId) {
+        const img = document.getElementById(imageId);
+        if (img.style.display === "none" || img.style.display === "") {
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
